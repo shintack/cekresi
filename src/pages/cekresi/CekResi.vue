@@ -12,7 +12,7 @@
             outlined
             v-model="cekResi.awb"
             label="No Resi"
-            class="q-mb-md"
+            class="q-mb-sm"
             @blur="$v.cekResi.awb.$touch"
             :error="$v.cekResi.awb.$error"
             error-message="Wajib diisi"
@@ -22,7 +22,7 @@
             v-model="cekResi.courier"
             :options="couriers"
             label="Pilih Kurir"
-            class="q-mb-md"
+            class="q-mb-sm"
             @blur="$v.cekResi.courier.$touch"
             :error="$v.cekResi.courier.$error"
             error-message="Wajib diisi"
@@ -117,7 +117,7 @@
             <q-separator spaced />
           </h5>
           <single-selector
-            class="q-mb-md"
+            class="q-mb-sm"
             v-model="cekOngkir.origin"
             :filterApi="cityFilterApi"
             label="Kota Asal"
@@ -128,7 +128,7 @@
             :disable="isLoading"
           />
           <single-selector
-            class="q-mb-md"
+            class="q-mb-sm"
             v-model="cekOngkir.destination"
             :filterApi="cityFilterApi"
             label="Kota Tujuan"
@@ -142,8 +142,8 @@
             outlined
             type="number"
             v-model="cekOngkir.weight"
-            label="Berat"
-            class="q-mb-md"
+            label="Berat (gram)"
+            class="q-mb-sm"
             @blur="$v.cekOngkir.weight.$touch"
             :error="$v.cekOngkir.weight.$error"
           />
@@ -154,7 +154,7 @@
             label="Kurir"
             multiple
             use-chips
-            class="q-mb-md"
+            class="q-mb-sm"
             @blur="$v.cekOngkir.courier.$touch"
             :error="$v.cekOngkir.courier.$error"
           />
@@ -164,9 +164,6 @@
             color="primary"
             @click="getCheckOngkir"
           />
-          <div class="q-mt-md">
-            {{ courierSelected }}
-          </div>
         </q-tab-panel>
       </q-tab-panels>
       <q-footer bordered class="bg-white text-primary">
@@ -320,12 +317,24 @@ export default {
       } else {
         const couriers = this.cekOngkir.courier;
         this.courierSelected = couriers;
+        Notify.create({
+          message: "Fitur sedang dalam pengembangan",
+          timeout: 1000,
+          type: "positive",
+          color: "positive",
+          icon: "info"
+        });
+        // this.actionCheckOngkir();
       }
     },
     actionCheckOngkir() {
       this.isLoading = true;
       this.$q.loading.show();
-      postage(this.cekResi)
+      const couriers = this.cekOngkir.couriers.map(c => {
+        return c.value;
+      });
+      this.cekOngkir.couriers = couriers;
+      postage(this.cekOngkir)
         .then(r => {
           this.trackingResult = r.data;
           this.$q.loading.hide();

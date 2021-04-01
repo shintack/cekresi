@@ -33,7 +33,7 @@
             color="primary"
             icon="send"
             outline
-            class="q-ml-md"
+            class="q-ml-md bg-white"
             label="Cek Ongkir"
             :to="{ name: 'cekresi', params: { tab: 'ongkir' } }"
           />
@@ -55,3 +55,5 @@ export default {
   name: "PageIndex"
 };
 </script>
+
+<style scoped></style>
