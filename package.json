@@ -1,0 +1,51 @@
+{
+  "name": "tokobukaid",
+  "version": "1.0.0",
+  "description": "Buka Toko Online Langsung Jadi. Yuk daftar!! GRATISSS!!!",
+  "productName": "TokoBuka - Buka Toko Online Langsung Jualan",
+  "cordovaId": "di.tokobuka.id",
+  "capacitorId": "",
+  "author": "shintack",
+  "private": true,
+  "scripts": {
+    "lint": "eslint --ext .js,.vue src",
+    "test": "echo \"No test specified\" && exit 0",
+    "build": "quasar build",
+    "deploy": "vercel"
+  },
+  "dependencies": {
+    "@quasar/extras": "^1.9.3",
+    "axios": "^0.18.1",
+    "compress.js": "^1.1.2",
+    "file-saver": "^2.0.2",
+    "moment": "^2.24.0",
+    "numeral": "^2.0.6",
+    "quasar": "^1.12.13",
+    "sanitize-html": "^1.27.3",
+    "striptags": "^3.1.1",
+    "v-clipboard": "^2.2.2",
+    "vue-i18n": "^8.0.0",
+    "vue-moment": "^4.1.0",
+    "vue-moments-ago": "^0.2.0",
+    "vue-social-sharing": "^3.0.4",
+    "vuejs-countdown-timer": "^2.1.3",
+    "vuelidate": "^0.7.5"
+  },
+  "devDependencies": {
+    "@quasar/app": "^1.9.6",
+    "@quasar/quasar-app-extension-dotenv": "^1.0.5",
+    "@vue/eslint-config-prettier": "^4.0.0",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.10.0",
+    "eslint-loader": "^2.1.1",
+    "eslint-plugin-vue": "^5.0.0"
+  },
+  "engines": {
+    "node": ">= 8.9.0",
+    "npm": ">= 5.6.0",
+    "yarn": ">= 1.6.0"
+  },
+  "browserslist": [
+    "last 1 version, not dead, ie >= 11"
+  ]
+}
