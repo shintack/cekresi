@@ -1,9 +1,9 @@
 {
-  "name": "tokobukaid",
+  "name": "cekresi",
   "version": "1.0.0",
-  "description": "Buka Toko Online Langsung Jadi. Yuk daftar!! GRATISSS!!!",
-  "productName": "TokoBuka - Buka Toko Online Langsung Jualan",
-  "cordovaId": "di.tokobuka.id",
+  "description": "Aplikasi Cek Resi & Ongkir",
+  "productName": "cekresi - Cek Resi By TokoBuka",
+  "cordovaId": "cekresi.tokobuka.id",
   "capacitorId": "",
   "author": "shintack",
   "private": true,
